@@ -1,0 +1,815 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Análisis de biología computacional},
+  pdfauthor={Juan Pablo Sebastián Escobar Juárez, Carol Jatziry Rendon Guerrero, Carlos Ito Miyasaki},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Análisis de biología computacional}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Situacion problema}
+\author{Juan Pablo Sebastián Escobar Juárez, Carol Jatziry Rendon
+Guerrero, Carlos Ito Miyasaki}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{propuesta}{%
+\section{Propuesta}\label{propuesta}}
+
+Hacer una comparación entre tres variantes del Virus SARS-CoV-2: la
+variante original, una variante de hace uno o dos años, y una variante
+reciente.
+
+En base a las comparaciones, analizar que porcentaje del virus ha
+cambiado e identificar las mutaciones de nucleótido único entre las
+secuencias de las mismas.
+
+La finalidad de este análisis es ver que tanto ha cambiado el virus con
+el tiempo, basándonos en la cantidad de mutaciones.
+
+El SARS-COV-2 sera tomado como la variante original, y se basaran los
+resultados en las graficas dadas por:
+
+``\url{https://ourworldindata.org/grapher/covid-variants-bar}''
+
+Se decidio utilizar la variante Delta (B.1.617.2, VBM, DELTA) ya que fue
+la variante predominante en 2021 y la variante Omicron (BA.5, VOC,
+OMICRON) que ha sido una de interes recientemente.
+
+\hypertarget{hipotesis}{%
+\section{Hipotesis}\label{hipotesis}}
+
+Creemos que la variante más reciente del COVID-19, Omicron, tendra un
+mayor número de mutaciones únicas en comparación con la variante Delta,
+ya que Omicron ha surgido más recientemente y ha tenido menos tiempo
+para evolucionar. Entre mas tiempo pasa, esperamos ver una mayor
+cantidad de mutaciones relevantes esperamos ver en las variantes.
+
+\hypertarget{anuxe1lisis-de-la-varaiante-reciente-delta}{%
+\subsection{Análisis de la varaiante reciente
+(DELTA)}\label{anuxe1lisis-de-la-varaiante-reciente-delta}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"\textbackslash{}14"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trad }\OtherTok{=}    \FunctionTok{c}\NormalTok{(}\AttributeTok{UUU=}\StringTok{"F"}\NormalTok{, }\AttributeTok{UUC=}\StringTok{"F"}\NormalTok{, }\AttributeTok{UUA=}\StringTok{"L"}\NormalTok{, }\AttributeTok{UUG=}\StringTok{"L"}\NormalTok{,}
+            \AttributeTok{UCU=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCC=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCA=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCG=}\StringTok{"S"}\NormalTok{,}
+            \AttributeTok{UAU=}\StringTok{"Y"}\NormalTok{, }\AttributeTok{UAC=}\StringTok{"Y"}\NormalTok{, }\AttributeTok{UAA=}\StringTok{"STOP"}\NormalTok{, }\AttributeTok{UAG=}\StringTok{"STOP"}\NormalTok{,}
+            \AttributeTok{UGU=}\StringTok{"C"}\NormalTok{, }\AttributeTok{UGC=}\StringTok{"C"}\NormalTok{, }\AttributeTok{UGA=}\StringTok{"STOP"}\NormalTok{, }\AttributeTok{UGG=}\StringTok{"W"}\NormalTok{,}
+            \AttributeTok{CUU=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUC=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUA=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUG=}\StringTok{"L"}\NormalTok{,}
+            \AttributeTok{CCU=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCC=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCA=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCG=}\StringTok{"P"}\NormalTok{,}
+            \AttributeTok{CAU=}\StringTok{"H"}\NormalTok{, }\AttributeTok{CAC=}\StringTok{"H"}\NormalTok{, }\AttributeTok{CAA=}\StringTok{"Q"}\NormalTok{, }\AttributeTok{CAG=}\StringTok{"Q"}\NormalTok{,}
+            \AttributeTok{CGU=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGC=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGA=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGG=}\StringTok{"R"}\NormalTok{,}
+            \AttributeTok{AUU=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUC=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUA=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUG=}\StringTok{"M"}\NormalTok{,}
+            \AttributeTok{ACU=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACC=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACA=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACG=}\StringTok{"T"}\NormalTok{,}
+            \AttributeTok{AAU=}\StringTok{"N"}\NormalTok{, }\AttributeTok{AAC=}\StringTok{"N"}\NormalTok{, }\AttributeTok{AAA=}\StringTok{"K"}\NormalTok{, }\AttributeTok{AAG=}\StringTok{"K"}\NormalTok{,}
+            \AttributeTok{AGU=}\StringTok{"S"}\NormalTok{, }\AttributeTok{AGC=}\StringTok{"S"}\NormalTok{, }\AttributeTok{AGA=}\StringTok{"R"}\NormalTok{, }\AttributeTok{AGG=}\StringTok{"R"}\NormalTok{,}
+            \AttributeTok{GUU=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUC=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUA=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUG=}\StringTok{"V"}\NormalTok{,}
+            \AttributeTok{GCU=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCC=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCA=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCG=}\StringTok{"A"}\NormalTok{,}
+            \AttributeTok{GAU=}\StringTok{"D"}\NormalTok{, }\AttributeTok{GAC=}\StringTok{"D"}\NormalTok{, }\AttributeTok{GAA=}\StringTok{"E"}\NormalTok{, }\AttributeTok{GAG=}\StringTok{"E"}\NormalTok{,}
+            \AttributeTok{GGU=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGC=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGA=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGG=}\StringTok{"G"}\NormalTok{)}
+
+\FunctionTok{library}\NormalTok{(seqinr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'seqinr' was built under R version 4.3.1
+\end{verbatim}
+
+\hypertarget{importamos-la-secuencia-de-referencia-y-200-secuencias-de-la-variante.}{%
+\subsection{Importamos la secuencia de referencia, y 200 secuencias de
+la
+variante.}\label{importamos-la-secuencia-de-referencia-y-200-secuencias-de-la-variante.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{original }\OtherTok{=} \FunctionTok{read.fasta}\NormalTok{(}\StringTok{"original.txt"}\NormalTok{)}
+\NormalTok{mexa }\OtherTok{=} \FunctionTok{read.fasta}\NormalTok{(}\StringTok{"delta200.fasta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{definimos-el-dataframe}{%
+\subsection{Definimos el dataframe}\label{definimos-el-dataframe}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Mutation =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Nucleotide =} \FunctionTok{numeric}\NormalTok{(),}
+  \AttributeTok{Codon =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Protein =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Gene =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Sequ =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{LongSequ=} \FunctionTok{numeric}\NormalTok{()}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{encontramos-las-mutaciones-utilizando-el-open-reading-frame-buscamos-las-diferencias.}{%
+\subsection{Encontramos las mutaciones, utilizando el open reading frame
+buscamos las
+diferencias.}\label{encontramos-las-mutaciones-utilizando-el-open-reading-frame-buscamos-las-diferencias.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (g }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\FunctionTok{length}\NormalTok{(original)))\{}
+  \ControlFlowTok{if}\NormalTok{ (g}\SpecialCharTok{==}\DecValTok{2}\NormalTok{ ) }\ControlFlowTok{next}
+\NormalTok{  anotaciones }\OtherTok{=} \FunctionTok{attr}\NormalTok{(original[[g]], }\StringTok{"Annot"}\NormalTok{) }
+\NormalTok{  atributos }\OtherTok{=} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{strsplit}\NormalTok{(anotaciones,}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{[|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{]|:|=|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{.|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{("}\NormalTok{)); }
+\NormalTok{  geneName }\OtherTok{=}\NormalTok{ atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"gene"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }
+  \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"join"}\NormalTok{))}\SpecialCharTok{\textgreater{}}\DecValTok{0}\NormalTok{) inicioGen }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"join"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]) }
+  \ControlFlowTok{else}\NormalTok{ inicioGen }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"location"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]) }
+  \FunctionTok{cat}\NormalTok{ (}\StringTok{"{-}{-}{-}{-}{-}{-} gene:"}\NormalTok{, geneName, }\StringTok{"inicioGen:"}\NormalTok{,inicioGen,}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{  arnOri }\OtherTok{=} \FunctionTok{as.vector}\NormalTok{(original[[g]])}
+\NormalTok{  arnOri[arnOri}\SpecialCharTok{==}\StringTok{"t"}\NormalTok{] }\OtherTok{=} \StringTok{"u"}
+\NormalTok{  arnOri }\OtherTok{=} \FunctionTok{toupper}\NormalTok{(arnOri)}
+
+  \ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(g,}\FunctionTok{length}\NormalTok{(mexa),}\DecValTok{12}\NormalTok{))\{}
+\NormalTok{    a}\OtherTok{=} \FunctionTok{names}\NormalTok{(mexa)[k]}
+\NormalTok{    b}\OtherTok{=} \FunctionTok{length}\NormalTok{(mexa[[k]])}
+\NormalTok{    arnMexa }\OtherTok{=} \FunctionTok{as.vector}\NormalTok{(mexa[[k]])}
+\NormalTok{    arnMexa[arnMexa}\SpecialCharTok{==}\StringTok{"t"}\NormalTok{] }\OtherTok{=} \StringTok{"u"}
+\NormalTok{    arnMexa }\OtherTok{=} \FunctionTok{toupper}\NormalTok{(arnMexa)}
+    \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(arnOri) }\SpecialCharTok{!=} \FunctionTok{length}\NormalTok{(arnMexa)) }\ControlFlowTok{next}
+\NormalTok{    dif }\OtherTok{=} \FunctionTok{which}\NormalTok{(arnOri }\SpecialCharTok{!=}\NormalTok{ arnMexa) }
+    \ControlFlowTok{for}\NormalTok{ (x }\ControlFlowTok{in}\NormalTok{ dif)\{}
+\NormalTok{      muta }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnOri[x],}\StringTok{"to"}\NormalTok{,arnMexa[x], }\AttributeTok{sep=}\StringTok{""}\NormalTok{) }
+\NormalTok{      inicioCodon }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{{-}}\NormalTok{ (x}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{\%\%}\DecValTok{3} 
+\NormalTok{      posGlobal }\OtherTok{=}\NormalTok{ inicioCodon }\SpecialCharTok{+}\NormalTok{ inicioGen}
+\NormalTok{      numCodon }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{((x}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\DecValTok{3}\SpecialCharTok{+}\DecValTok{1}\NormalTok{) }
+\NormalTok{      codonOri }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnOri[inicioCodon], arnOri[inicioCodon}\SpecialCharTok{+}\DecValTok{1}\NormalTok{], arnOri[inicioCodon}\SpecialCharTok{+}\DecValTok{2}\NormalTok{],}\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      codonMex }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnMexa[inicioCodon], arnMexa[inicioCodon}\SpecialCharTok{+}\DecValTok{1}\NormalTok{], arnMexa[inicioCodon}\SpecialCharTok{+}\DecValTok{2}\NormalTok{],}\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      codonChange }\OtherTok{=} \FunctionTok{paste}\NormalTok{(codonOri,}\StringTok{"to"}\NormalTok{,codonMex, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      aminoChange }\OtherTok{=} \FunctionTok{paste}\NormalTok{(trad[codonOri],numCodon,trad[codonMex], }\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+      \ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(trad[codonMex]))\{}
+\NormalTok{        newRow }\OtherTok{=} \FunctionTok{list}\NormalTok{(muta, posGlobal, codonChange, aminoChange, geneName, a, b)}
+\NormalTok{        df[}\FunctionTok{nrow}\NormalTok{(df)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{, ] }\OtherTok{=}\NormalTok{ newRow}
+\NormalTok{      \}}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ------ gene: ORF1ab inicioGen: 266 
+## ------ gene: S inicioGen: 21563 
+## ------ gene: ORF3a inicioGen: 25393 
+## ------ gene: E inicioGen: 26245 
+## ------ gene: M inicioGen: 26523 
+## ------ gene: ORF6 inicioGen: 27202 
+## ------ gene: ORF7a inicioGen: 27394 
+## ------ gene: ORF7b inicioGen: 27756 
+## ------ gene: ORF8 inicioGen: 27894 
+## ------ gene: N inicioGen: 28274 
+## ------ gene: ORF10 inicioGen: 29558
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1776
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Mutation Nucleotide    Codon Protein   Gene       Sequ LongSequ
+## 1     CtoU       3036 UUCtoUUU   F924F ORF1ab WGP16278.1    21291
+## 2     GtoU       4182 GCUtoUCU  A1306S ORF1ab WGP16278.1    21291
+## 3     CtoU       6402 CCAtoCUA  P2046L ORF1ab WGP16278.1    21291
+## 4     CtoU       7125 CCUtoUCU  P2287S ORF1ab WGP16278.1    21291
+## 5     CtoU       8985 GACtoGAU  D2907D ORF1ab WGP16278.1    21291
+## 6     GtoU       9054 GUAtoUUA  V2930L ORF1ab WGP16278.1    21291
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1776
+\end{verbatim}
+
+\hypertarget{filtramos-los-datos.}{%
+\subsection{Filtramos los datos.}\label{filtramos-los-datos.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:seqinr':
+## 
+##     count
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfgraph }\OtherTok{=} \FunctionTok{filter}\NormalTok{(}
+  \FunctionTok{summarise}\NormalTok{(}
+    \FunctionTok{select}\NormalTok{(}
+      \FunctionTok{group\_by}\NormalTok{(df, Protein),}
+\NormalTok{      Mutation}\SpecialCharTok{:}\NormalTok{Gene}
+\NormalTok{    ),}
+    \AttributeTok{Mutation =} \FunctionTok{first}\NormalTok{(Mutation),}
+    \AttributeTok{Codon =} \FunctionTok{first}\NormalTok{(Codon),}
+    \AttributeTok{Gene =} \FunctionTok{first}\NormalTok{(Gene),}
+    \AttributeTok{Cuenta =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{  ),}
+\NormalTok{  Cuenta}\SpecialCharTok{\textgreater{}}\DecValTok{20}
+\NormalTok{)}
+
+\NormalTok{df2graph }\OtherTok{=} \FunctionTok{filter}\NormalTok{(}
+  \FunctionTok{summarise}\NormalTok{(}
+    \FunctionTok{select}\NormalTok{(}
+      \FunctionTok{group\_by}\NormalTok{(df, Sequ),}
+\NormalTok{      Mutation}\SpecialCharTok{:}\NormalTok{LongSequ}
+\NormalTok{    ),}
+    \AttributeTok{LongSequ =} \FunctionTok{first}\NormalTok{(LongSequ),}
+    \AttributeTok{Nmuta =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{  ),}
+\NormalTok{  Nmuta}\SpecialCharTok{\textgreater{}}\DecValTok{15}
+\NormalTok{)}
+\NormalTok{df2graph }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(df2graph, }\AttributeTok{Ncodones=}\FunctionTok{c}\NormalTok{((df2graph}\SpecialCharTok{$}\NormalTok{LongSequ}\SpecialCharTok{{-}}\NormalTok{df2graph}\SpecialCharTok{$}\NormalTok{LongSequ}\SpecialCharTok{\%\%}\DecValTok{3}\NormalTok{)}\SpecialCharTok{/}\DecValTok{3}  \SpecialCharTok{+}\DecValTok{1}\NormalTok{))}
+\NormalTok{df2graph }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(df2graph, }\AttributeTok{Porcentaje=}\FunctionTok{c}\NormalTok{(}\DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ df2graph}\SpecialCharTok{$}\NormalTok{Nmuta}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\NormalTok{df2graph}\SpecialCharTok{$}\NormalTok{Ncodones))}
+
+\FunctionTok{head}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+##   Protein Mutation Codon    Gene   Cuenta
+##   <chr>   <chr>    <chr>    <chr>   <int>
+## 1 A1306S  GtoU     GCUtoUCU ORF1ab     52
+## 2 A6319V  CtoU     GCUtoGUU ORF1ab     52
+## 3 D2907D  CtoU     GACtoGAU ORF1ab     52
+## 4 D377Y   GtoU     GAUtoUAU N          64
+## 5 D63G    AtoG     GACtoGGC N          64
+## 6 F924F   CtoU     UUCtoUUU ORF1ab     60
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [22 x 5] (S3: tbl_df/tbl/data.frame)
+##  $ Protein : chr [1:22] "A1306S" "A6319V" "D2907D" "D377Y" ...
+##  $ Mutation: chr [1:22] "GtoU" "CtoU" "CtoU" "GtoU" ...
+##  $ Codon   : chr [1:22] "GCUtoUCU" "GCUtoGUU" "GACtoGAU" "GAUtoUAU" ...
+##  $ Gene    : chr [1:22] "ORF1ab" "ORF1ab" "ORF1ab" "N" ...
+##  $ Cuenta  : int [1:22] 52 52 52 64 64 60 54 57 64 52 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfgraph }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(dfgraph)}
+\NormalTok{df2graph }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(df2graph)}
+\FunctionTok{str}\NormalTok{(df2graph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    51 obs. of  5 variables:
+##  $ Sequ      : chr  "WGP16446.1" "WGP17281.1" "WGP62604.1" "WGP70239.1" ...
+##  $ LongSequ  : num  21291 21291 21291 21291 21291 ...
+##  $ Nmuta     : int  22 17 19 16 17 17 19 17 20 20 ...
+##  $ Ncodones  : num  7098 7098 7098 7098 7098 ...
+##  $ Porcentaje: num  99.7 99.8 99.7 99.8 99.8 ...
+\end{verbatim}
+
+\hypertarget{resultados}{%
+\section{Resultados}\label{resultados}}
+
+\hypertarget{grafica-1}{%
+\subsection{Grafica 1}\label{grafica-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(dfgraph)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Protein, }\AttributeTok{y=}\NormalTok{Cuenta, }\AttributeTok{fill=}\NormalTok{Protein, }\AttributeTok{label=}\NormalTok{Cuenta)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Frecuencia de mutaciones de sustitución en B.1.617.2, VBM, DELTA"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Mutación"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Mutación"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{vjust=}\DecValTok{0}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Gene,}\AttributeTok{scales=}\StringTok{"free"}\NormalTok{, }\AttributeTok{space=}\StringTok{"free\_x"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{grafica-2}{%
+\subsection{Grafica 2}\label{grafica-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m}\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{ df2graph,}
+       \AttributeTok{mapping=} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{ Porcentaje, }\AttributeTok{fill=} \StringTok{"red"}\NormalTok{)) }\SpecialCharTok{+}
+         \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{10}\NormalTok{, }\AttributeTok{alpha=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+        \FunctionTok{labs}\NormalTok{(}\AttributeTok{tittle=} \StringTok{\textquotesingle{}Frecuencias de porcentajes de mutaciones por secuencia\textquotesingle{}}\NormalTok{,}
+             \AttributeTok{fill=}\StringTok{\textquotesingle{}frecuencias\textquotesingle{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textquotesingle{}frecuencias\textquotesingle{}}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(m)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{grafica-3}{%
+\subsection{Grafica 3}\label{grafica-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(df2graph)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Sequ, }\AttributeTok{y=}\NormalTok{Nmuta, }\AttributeTok{fill=}\NormalTok{Sequ, }\AttributeTok{label=}\NormalTok{Nmuta)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Frecuencia de mutaciones de sustitución en B.1.617.2, VBM, DELTA"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Mutaciones por secuencia"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Mutación"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{vjust=}\DecValTok{0}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(q)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\hypertarget{analisis-de-la-varaiante-de-hace-auxf1os-omicron}{%
+\subsection{Analisis de la varaiante de hace años
+(OMICRON)}\label{analisis-de-la-varaiante-de-hace-auxf1os-omicron}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"\textbackslash{}14"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trad }\OtherTok{=}    \FunctionTok{c}\NormalTok{(}\AttributeTok{UUU=}\StringTok{"F"}\NormalTok{, }\AttributeTok{UUC=}\StringTok{"F"}\NormalTok{, }\AttributeTok{UUA=}\StringTok{"L"}\NormalTok{, }\AttributeTok{UUG=}\StringTok{"L"}\NormalTok{,}
+            \AttributeTok{UCU=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCC=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCA=}\StringTok{"S"}\NormalTok{, }\AttributeTok{UCG=}\StringTok{"S"}\NormalTok{,}
+            \AttributeTok{UAU=}\StringTok{"Y"}\NormalTok{, }\AttributeTok{UAC=}\StringTok{"Y"}\NormalTok{, }\AttributeTok{UAA=}\StringTok{"STOP"}\NormalTok{, }\AttributeTok{UAG=}\StringTok{"STOP"}\NormalTok{,}
+            \AttributeTok{UGU=}\StringTok{"C"}\NormalTok{, }\AttributeTok{UGC=}\StringTok{"C"}\NormalTok{, }\AttributeTok{UGA=}\StringTok{"STOP"}\NormalTok{, }\AttributeTok{UGG=}\StringTok{"W"}\NormalTok{,}
+            \AttributeTok{CUU=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUC=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUA=}\StringTok{"L"}\NormalTok{, }\AttributeTok{CUG=}\StringTok{"L"}\NormalTok{,}
+            \AttributeTok{CCU=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCC=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCA=}\StringTok{"P"}\NormalTok{, }\AttributeTok{CCG=}\StringTok{"P"}\NormalTok{,}
+            \AttributeTok{CAU=}\StringTok{"H"}\NormalTok{, }\AttributeTok{CAC=}\StringTok{"H"}\NormalTok{, }\AttributeTok{CAA=}\StringTok{"Q"}\NormalTok{, }\AttributeTok{CAG=}\StringTok{"Q"}\NormalTok{,}
+            \AttributeTok{CGU=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGC=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGA=}\StringTok{"R"}\NormalTok{, }\AttributeTok{CGG=}\StringTok{"R"}\NormalTok{,}
+            \AttributeTok{AUU=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUC=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUA=}\StringTok{"I"}\NormalTok{, }\AttributeTok{AUG=}\StringTok{"M"}\NormalTok{,}
+            \AttributeTok{ACU=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACC=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACA=}\StringTok{"T"}\NormalTok{, }\AttributeTok{ACG=}\StringTok{"T"}\NormalTok{,}
+            \AttributeTok{AAU=}\StringTok{"N"}\NormalTok{, }\AttributeTok{AAC=}\StringTok{"N"}\NormalTok{, }\AttributeTok{AAA=}\StringTok{"K"}\NormalTok{, }\AttributeTok{AAG=}\StringTok{"K"}\NormalTok{,}
+            \AttributeTok{AGU=}\StringTok{"S"}\NormalTok{, }\AttributeTok{AGC=}\StringTok{"S"}\NormalTok{, }\AttributeTok{AGA=}\StringTok{"R"}\NormalTok{, }\AttributeTok{AGG=}\StringTok{"R"}\NormalTok{,}
+            \AttributeTok{GUU=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUC=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUA=}\StringTok{"V"}\NormalTok{, }\AttributeTok{GUG=}\StringTok{"V"}\NormalTok{,}
+            \AttributeTok{GCU=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCC=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCA=}\StringTok{"A"}\NormalTok{, }\AttributeTok{GCG=}\StringTok{"A"}\NormalTok{,}
+            \AttributeTok{GAU=}\StringTok{"D"}\NormalTok{, }\AttributeTok{GAC=}\StringTok{"D"}\NormalTok{, }\AttributeTok{GAA=}\StringTok{"E"}\NormalTok{, }\AttributeTok{GAG=}\StringTok{"E"}\NormalTok{,}
+            \AttributeTok{GGU=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGC=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGA=}\StringTok{"G"}\NormalTok{, }\AttributeTok{GGG=}\StringTok{"G"}\NormalTok{)}
+
+\FunctionTok{library}\NormalTok{(seqinr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{importamos-la-secuencia-de-referencia-y-200-secuencias-de-la-variante.-1}{%
+\subsection{Importamos la secuencia de referencia, y 200 secuencias de
+la
+variante.}\label{importamos-la-secuencia-de-referencia-y-200-secuencias-de-la-variante.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{original }\OtherTok{=} \FunctionTok{read.fasta}\NormalTok{(}\StringTok{"original.txt"}\NormalTok{)}
+\NormalTok{mexa }\OtherTok{=} \FunctionTok{read.fasta}\NormalTok{(}\StringTok{"omicron200.fasta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{definimos-el-dataframe-1}{%
+\subsection{Definimos el dataframe}\label{definimos-el-dataframe-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Mutation =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Nucleotide =} \FunctionTok{numeric}\NormalTok{(),}
+  \AttributeTok{Codon =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Protein =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Gene =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{Sequ =} \FunctionTok{character}\NormalTok{(),}
+  \AttributeTok{LongSequ=} \FunctionTok{numeric}\NormalTok{()}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{encontramos-las-mutaciones-utilizando-el-open-reading-frame-buscamos-las-diferencias.-1}{%
+\subsection{Encontramos las mutaciones, utilizando el open reading frame
+buscamos las
+diferencias.}\label{encontramos-las-mutaciones-utilizando-el-open-reading-frame-buscamos-las-diferencias.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (g }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\FunctionTok{length}\NormalTok{(original)))\{}
+  \ControlFlowTok{if}\NormalTok{ (g}\SpecialCharTok{==}\DecValTok{2}\NormalTok{ ) }\ControlFlowTok{next}
+\NormalTok{  anotaciones }\OtherTok{=} \FunctionTok{attr}\NormalTok{(original[[g]], }\StringTok{"Annot"}\NormalTok{) }
+\NormalTok{  atributos }\OtherTok{=} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{strsplit}\NormalTok{(anotaciones,}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{[|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{]|:|=|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{.|}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{("}\NormalTok{)); }
+\NormalTok{  geneName }\OtherTok{=}\NormalTok{ atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"gene"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }
+  \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"join"}\NormalTok{))}\SpecialCharTok{\textgreater{}}\DecValTok{0}\NormalTok{) inicioGen }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"join"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]) }
+  \ControlFlowTok{else}\NormalTok{ inicioGen }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(atributos[}\FunctionTok{which}\NormalTok{(atributos}\SpecialCharTok{==}\StringTok{"location"}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]) }
+  \FunctionTok{cat}\NormalTok{ (}\StringTok{"{-}{-}{-}{-}{-}{-} gene:"}\NormalTok{, geneName, }\StringTok{"inicioGen:"}\NormalTok{,inicioGen,}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{  arnOri }\OtherTok{=} \FunctionTok{as.vector}\NormalTok{(original[[g]])}
+\NormalTok{  arnOri[arnOri}\SpecialCharTok{==}\StringTok{"t"}\NormalTok{] }\OtherTok{=} \StringTok{"u"}
+\NormalTok{  arnOri }\OtherTok{=} \FunctionTok{toupper}\NormalTok{(arnOri)}
+
+  \ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(g,}\FunctionTok{length}\NormalTok{(mexa),}\DecValTok{12}\NormalTok{))\{}
+\NormalTok{    a}\OtherTok{=} \FunctionTok{names}\NormalTok{(mexa)[k]}
+\NormalTok{    b}\OtherTok{=} \FunctionTok{length}\NormalTok{(mexa[[k]])}
+\NormalTok{    arnMexa }\OtherTok{=} \FunctionTok{as.vector}\NormalTok{(mexa[[k]])}
+\NormalTok{    arnMexa[arnMexa}\SpecialCharTok{==}\StringTok{"t"}\NormalTok{] }\OtherTok{=} \StringTok{"u"}
+\NormalTok{    arnMexa }\OtherTok{=} \FunctionTok{toupper}\NormalTok{(arnMexa)}
+    \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(arnOri) }\SpecialCharTok{!=} \FunctionTok{length}\NormalTok{(arnMexa)) }\ControlFlowTok{next}
+\NormalTok{    dif }\OtherTok{=} \FunctionTok{which}\NormalTok{(arnOri }\SpecialCharTok{!=}\NormalTok{ arnMexa) }
+    \ControlFlowTok{for}\NormalTok{ (x }\ControlFlowTok{in}\NormalTok{ dif)\{}
+\NormalTok{      muta }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnOri[x],}\StringTok{"to"}\NormalTok{,arnMexa[x], }\AttributeTok{sep=}\StringTok{""}\NormalTok{) }
+\NormalTok{      inicioCodon }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{{-}}\NormalTok{ (x}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{\%\%}\DecValTok{3} 
+\NormalTok{      posGlobal }\OtherTok{=}\NormalTok{ inicioCodon }\SpecialCharTok{+}\NormalTok{ inicioGen}
+\NormalTok{      numCodon }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{((x}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\DecValTok{3}\SpecialCharTok{+}\DecValTok{1}\NormalTok{) }
+\NormalTok{      codonOri }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnOri[inicioCodon], arnOri[inicioCodon}\SpecialCharTok{+}\DecValTok{1}\NormalTok{], arnOri[inicioCodon}\SpecialCharTok{+}\DecValTok{2}\NormalTok{],}\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      codonMex }\OtherTok{=} \FunctionTok{paste}\NormalTok{(arnMexa[inicioCodon], arnMexa[inicioCodon}\SpecialCharTok{+}\DecValTok{1}\NormalTok{], arnMexa[inicioCodon}\SpecialCharTok{+}\DecValTok{2}\NormalTok{],}\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      codonChange }\OtherTok{=} \FunctionTok{paste}\NormalTok{(codonOri,}\StringTok{"to"}\NormalTok{,codonMex, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+\NormalTok{      aminoChange }\OtherTok{=} \FunctionTok{paste}\NormalTok{(trad[codonOri],numCodon,trad[codonMex], }\AttributeTok{sep=}\StringTok{""}\NormalTok{)}
+      \ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(trad[codonMex]))\{}
+\NormalTok{        newRow }\OtherTok{=} \FunctionTok{list}\NormalTok{(muta, posGlobal, codonChange, aminoChange, geneName, a, b)}
+\NormalTok{        df[}\FunctionTok{nrow}\NormalTok{(df)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{, ] }\OtherTok{=}\NormalTok{ newRow}
+\NormalTok{      \}}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ------ gene: ORF1ab inicioGen: 266 
+## ------ gene: S inicioGen: 21563 
+## ------ gene: ORF3a inicioGen: 25393 
+## ------ gene: E inicioGen: 26245 
+## ------ gene: M inicioGen: 26523 
+## ------ gene: ORF6 inicioGen: 27202 
+## ------ gene: ORF7a inicioGen: 27394 
+## ------ gene: ORF7b inicioGen: 27756 
+## ------ gene: ORF8 inicioGen: 27894 
+## ------ gene: N inicioGen: 28274 
+## ------ gene: ORF10 inicioGen: 29558
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 472
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Mutation Nucleotide    Codon Protein  Gene       Sequ LongSequ
+## 1     CtoU      25583 ACCtoACU    T64T ORF3a WGP80321.1      828
+## 2     CtoU      26060 ACUtoAUU   T223I ORF3a WGP80321.1      828
+## 3     CtoU      25583 ACCtoACU    T64T ORF3a WGP89349.1      828
+## 4     CtoU      26060 ACUtoAUU   T223I ORF3a WGP89349.1      828
+## 5     CtoU      25583 ACCtoACU    T64T ORF3a WGP93866.1      828
+## 6     CtoU      26060 ACUtoAUU   T223I ORF3a WGP93866.1      828
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 472
+\end{verbatim}
+
+\hypertarget{filtramos-los-datos.-1}{%
+\subsection{Filtramos los datos.}\label{filtramos-los-datos.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{dfgraph }\OtherTok{=} \FunctionTok{filter}\NormalTok{(}
+  \FunctionTok{summarise}\NormalTok{(}
+    \FunctionTok{select}\NormalTok{(}
+      \FunctionTok{group\_by}\NormalTok{(df, Protein),}
+\NormalTok{      Mutation}\SpecialCharTok{:}\NormalTok{Gene}
+\NormalTok{    ),}
+    \AttributeTok{Mutation =} \FunctionTok{first}\NormalTok{(Mutation),}
+    \AttributeTok{Codon =} \FunctionTok{first}\NormalTok{(Codon),}
+    \AttributeTok{Gene =} \FunctionTok{first}\NormalTok{(Gene),}
+    \AttributeTok{Cuenta =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{  ),}
+\NormalTok{  Cuenta}\SpecialCharTok{\textgreater{}}\DecValTok{20}
+\NormalTok{)}
+
+\NormalTok{df2graph }\OtherTok{=} \FunctionTok{filter}\NormalTok{(}
+  \FunctionTok{summarise}\NormalTok{(}
+    \FunctionTok{select}\NormalTok{(}
+      \FunctionTok{group\_by}\NormalTok{(df, Sequ),}
+\NormalTok{      Mutation}\SpecialCharTok{:}\NormalTok{LongSequ}
+\NormalTok{    ),}
+    \AttributeTok{LongSequ =} \FunctionTok{first}\NormalTok{(LongSequ),}
+    \AttributeTok{Nmuta =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{  ),}
+\NormalTok{  Nmuta}\SpecialCharTok{\textgreater{}}\DecValTok{15}
+\NormalTok{)}
+\NormalTok{df2graph }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(df2graph, }\AttributeTok{Ncodones=}\FunctionTok{c}\NormalTok{((df2graph}\SpecialCharTok{$}\NormalTok{LongSequ}\SpecialCharTok{{-}}\NormalTok{df2graph}\SpecialCharTok{$}\NormalTok{LongSequ}\SpecialCharTok{\%\%}\DecValTok{3}\NormalTok{)}\SpecialCharTok{/}\DecValTok{3}  \SpecialCharTok{+}\DecValTok{1}\NormalTok{))}
+\NormalTok{df2graph }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(df2graph, }\AttributeTok{Porcentaje=}\FunctionTok{c}\NormalTok{(}\DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ df2graph}\SpecialCharTok{$}\NormalTok{Nmuta}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\NormalTok{df2graph}\SpecialCharTok{$}\NormalTok{Ncodones))}
+
+\FunctionTok{head}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+##   Protein Mutation Codon    Gene  Cuenta
+##   <chr>   <chr>    <chr>    <chr>  <int>
+## 1 A63T    GtoA     GCUtoACU M         30
+## 2 D3N     GtoA     GAUtoAAU M         24
+## 3 L18L    CtoU     CUAtoUUA ORF7b     31
+## 4 T223I   CtoU     ACUtoAUU ORF3a     31
+## 5 T64T    CtoU     ACCtoACU ORF3a     31
+## 6 T9I     CtoU     ACAtoAUA E         31
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(dfgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [6 x 5] (S3: tbl_df/tbl/data.frame)
+##  $ Protein : chr [1:6] "A63T" "D3N" "L18L" "T223I" ...
+##  $ Mutation: chr [1:6] "GtoA" "GtoA" "CtoU" "CtoU" ...
+##  $ Codon   : chr [1:6] "GCUtoACU" "GAUtoAAU" "CUAtoUUA" "ACUtoAUU" ...
+##  $ Gene    : chr [1:6] "M" "M" "ORF7b" "ORF3a" ...
+##  $ Cuenta  : int [1:6] 30 24 31 31 31 31
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dfgraph }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(dfgraph)}
+\NormalTok{df2graph }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(df2graph)}
+\FunctionTok{str}\NormalTok{(df2graph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    1 obs. of  5 variables:
+##  $ Sequ      : chr "WBD99210.1"
+##  $ LongSequ  : num 366
+##  $ Nmuta     : int 246
+##  $ Ncodones  : num 123
+##  $ Porcentaje: num -100
+\end{verbatim}
+
+\hypertarget{resultados-1}{%
+\section{Resultados}\label{resultados-1}}
+
+\hypertarget{grafica-1-1}{%
+\subsection{Grafica 1}\label{grafica-1-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(dfgraph)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Protein, }\AttributeTok{y=}\NormalTok{Cuenta, }\AttributeTok{fill=}\NormalTok{Protein, }\AttributeTok{label=}\NormalTok{Cuenta)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Frecuencia de mutaciones de sustitución en BA.5, VOC, OMICRON"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Mutación"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Mutación"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{vjust=}\DecValTok{0}\NormalTok{)}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\NormalTok{p }\OtherTok{=}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Gene,}\AttributeTok{scales=}\StringTok{"free"}\NormalTok{, }\AttributeTok{space=}\StringTok{"free\_x"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\hypertarget{grafica-2-1}{%
+\subsection{Grafica 2}\label{grafica-2-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m}\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{ df2graph,}
+       \AttributeTok{mapping=} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{ Porcentaje, }\AttributeTok{fill=} \StringTok{"red"}\NormalTok{)) }\SpecialCharTok{+}
+         \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{10}\NormalTok{, }\AttributeTok{alpha=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+        \FunctionTok{labs}\NormalTok{(}\AttributeTok{tittle=} \StringTok{\textquotesingle{}Frecuencias de porcentajes de mutaciones por secuencia\textquotesingle{}}\NormalTok{,}
+             \AttributeTok{fill=}\StringTok{\textquotesingle{}frecuencias\textquotesingle{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textquotesingle{}frecuencias\textquotesingle{}}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(m)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\hypertarget{grafica-3-1}{%
+\subsection{Grafica 3}\label{grafica-3-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(df2graph)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Sequ, }\AttributeTok{y=}\NormalTok{Nmuta, }\AttributeTok{fill=}\NormalTok{Sequ, }\AttributeTok{label=}\NormalTok{Nmuta)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Frecuencia de mutaciones de sustitución en BA.5, VOC, OMICRON"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Mutaciones por secuencia"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Mutación"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{vjust=}\DecValTok{0}\NormalTok{)}
+\NormalTok{q }\OtherTok{=}\NormalTok{ q }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(q)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Reto_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+Basandonos en los resultados obtenidos, podemos concluir que la cantidad
+de mutaciones encontradas en las variantes Delta y Omicron no difiere
+significativamente. La variante Omicron no parece tener muchas más
+mutaciones relevantes que la variante Delta, a pesar de ser más
+reciente. Creemos que esto puede ser relevante para la comprensión de la
+evolución del virus y su capacidad de propagación y transmisión.
+
+\end{document}
